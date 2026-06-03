@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Music New Tab",
+  "version": "1.0",
+  "description": "Minimal music-focused Chrome new tab page",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [],
+  "icons": {}
+}

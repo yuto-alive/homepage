@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Tab</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Album Section -->
+    <section class="album-showcase">
+      <div class="albums" id="albums"></div>
+
+      <button id="shuffleBtn">Shuffle</button>
+    </section>
+
+    <!-- Search -->
+    <section class="search-section">
+
+      <form action="https://www.google.com/search" method="GET">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search Google or type a URL"
+          autocomplete="off"
+        />
+      </form>
+
+    </section>
+
+    <!-- Shortcuts -->
+    <section class="shortcuts-section">
+
+      <div class="shortcuts-grid" id="shortcutsGrid"></div>
+
+      <button id="addShortcutBtn">
+        + Add Shortcut
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal hidden" id="modal">
+
+    <div class="modal-content">
+
+      <h2>Add Shortcut</h2>
+
+      <input type="text" id="siteTitle" placeholder="Title">
+
+      <input type="text" id="siteURL" placeholder="https://example.com">
+
+      <button id="saveShortcut">
+        Save
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
