@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New Tab</title>
+  <meta name="theme-color" content="#050505">
 
+  <link rel="icon" href="chrome-logo-sketch-symbol-variant.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,16 +14,18 @@
   <main class="container">
 
     <!-- Album Section -->
-    <section class="album-showcase">
-      <div class="albums" id="albums"></div>
+    <section class="album-showcase" aria-label="Album showcase">
+      <button id="shuffleBtn" class="icon-button" type="button" aria-label="Refresh albums" title="Refresh albums">
+        &#10227;
+      </button>
 
-      <button id="shuffleBtn">Shuffle</button>
+      <div class="albums" id="albums"></div>
     </section>
 
     <!-- Search -->
     <section class="search-section">
 
-      <form action="https://www.google.com/search" method="GET">
+      <form action="https://www.google.com/search" method="GET" role="search">
         <input
           type="text"
           name="q"
@@ -37,8 +41,8 @@
 
       <div class="shortcuts-grid" id="shortcutsGrid"></div>
 
-      <button id="addShortcutBtn">
-        + Add Shortcut
+      <button id="addShortcutBtn" type="button">
+        Add Shortcut
       </button>
 
     </section>
@@ -46,19 +50,22 @@
   </main>
 
   <!-- Modal -->
-  <div class="modal hidden" id="modal">
+  <div class="modal hidden" id="modal" aria-hidden="true">
 
-    <div class="modal-content">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
 
-      <h2>Add Shortcut</h2>
+      <h2 id="modalTitle">Add Shortcut</h2>
 
-      <input type="text" id="siteTitle" placeholder="Title">
+      <label for="siteTitle">Title</label>
+      <input type="text" id="siteTitle" placeholder="Title" autocomplete="off">
 
-      <input type="text" id="siteURL" placeholder="https://example.com">
+      <label for="siteURL">URL</label>
+      <input type="text" id="siteURL" placeholder="https://example.com" autocomplete="off">
 
-      <button id="saveShortcut">
-        Save
-      </button>
+      <div class="modal-actions">
+        <button id="cancelShortcut" class="secondary-button" type="button">Cancel</button>
+        <button id="saveShortcut" type="button">Save</button>
+      </div>
 
     </div>
 
